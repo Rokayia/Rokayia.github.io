@@ -26,27 +26,32 @@ const projects = (await getCollection('work'))
 ---
 
 <BaseLayout>
+
 	<div class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, my name is Jeanine White"
-					tagline="I am a Creative Developer who is currently based in Portland, Oregon."
+					title="Bonjour, je suis Rokayia Almhdie"
+					tagline="Ingénieure en Technologies de l'Information pour la santé en reconversion dans le domaine du développement Web. En recherche d'un stage du 13 mai au 19 juillet."
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
+						<Pill><Icon icon="code" size="1.33em" /> Développeuse</Pill>
+						<Pill><Icon icon="ambition" size="1.33em" /> Ambitieuse</Pill>
+						<Pill><Icon icon="poly" size="1.33em" /> Polyvalente</Pill>
 					</div>
 				</Hero>
-
-				<img
-					alt="Jeanine White smiling in a red plaid shirt and tortoise shell glasses"
-					width="480"
-					height="620"
-					src="/assets/portrait.jpg"
-				/>
+			   <div class="cardRight">
+  <video src="/assets/rokayia3.mp4" autoplay loop muted></video>
+  </div>
+				<div class="imageHero">
+					<img
+						alt="Rokayia Almhdie photo"
+						width="480"
+						height="620"
+						src="/assets/pictureRokayia.jpg"
+					/>
+				</div>
 			</header>
 
 			<Skills />
@@ -55,8 +60,8 @@ const projects = (await getCollection('work'))
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Selected Work</h3>
-					<p>Take a look below at some of my featured work for clients from the past few years.</p>
+					<h3>Projets</h3>
+					<p>Quelques-uns des travaux que j'ai réalisés au cours des dernières années.</p>
 				</header>
 
 				<div class="gallery">
@@ -73,33 +78,13 @@ const projects = (await getCollection('work'))
 
 				<div class="cta">
 					<CallToAction href="/work/">
-						View All
+						Voir tous les projets
 						<Icon icon="arrow-right" size="1.2em" />
 					</CallToAction>
 				</div>
 			</section>
 
-			<section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
-					<p>
-						I have been fortunate enough to receive praise for my work in several publications. Take
-						a look below to learn more.
-					</p>
-				</header>
 
-				<div class="gallery">
-					<Grid variant="small">
-						{
-							['Medium', 'BuzzFeed', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => (
-								<li class="mention-card">
-									<p>{brand}</p>
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-			</section>
 		</main>
 
 		<ContactCTA />
@@ -107,6 +92,7 @@ const projects = (await getCollection('work'))
 </BaseLayout>
 
 <style>
+
 	.hero {
 		display: flex;
 		flex-direction: column;
@@ -119,6 +105,7 @@ const projects = (await getCollection('work'))
 	}
 
 	.hero img {
+		
 		aspect-ratio: 5 / 4;
 		object-fit: cover;
 		object-position: top;
@@ -132,17 +119,19 @@ const projects = (await getCollection('work'))
 			grid-template-columns: 6fr 4fr;
 			padding-inline: 2.5rem;
 			gap: 3.75rem;
+			
 		}
 
 		.roles {
 			margin-top: 0.5rem;
 			display: flex;
 			gap: 0.5rem;
+			
 		}
 
 		.hero img {
 			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
+			border-radius: 1.5rem;
 			object-fit: cover;
 		}
 	}
@@ -152,16 +141,29 @@ const projects = (await getCollection('work'))
 	.section {
 		display: grid;
 		gap: 2rem;
+		
 	}
 
 	.with-background {
 		position: relative;
 	}
+	.imageHero{
+		display:none
+	}
+.cardRight {
+  height: 100%;
+  width: 110%;
+}
 
+.cardRight video {
+  height: 100%;
+  width: 100%;
+}
 	.with-background::before {
+		
 		--hero-bg: var(--bg-image-subtle-2);
-
-		content: '';
+		
+				content: '';
 		position: absolute;
 		pointer-events: none;
 		left: 50%;
@@ -176,6 +178,7 @@ const projects = (await getCollection('work'))
 		background-blend-mode: overlay, normal, normal, normal;
 		mix-blend-mode: var(--bg-blend-mode);
 		z-index: -1;
+			
 	}
 
 	.with-background.bg-variant::before {
@@ -195,6 +198,7 @@ const projects = (await getCollection('work'))
 	}
 
 	@media (min-width: 50em) {
+
 		.section {
 			grid-template-columns: repeat(4, 1fr);
 			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
@@ -248,5 +252,18 @@ const projects = (await getCollection('work'))
 			border-radius: 1.5rem;
 			height: 9.5rem;
 		}
+	}
+	@media (max-width: 920px) {
+
+			  .cardRight {
+    display: none;
+  }
+
+  .cardRight video {
+    display: none;
+  }
+  .imageHero{
+		display:initial;
+	}
 	}
 </style>

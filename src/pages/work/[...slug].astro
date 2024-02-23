@@ -7,7 +7,7 @@ import ContactCTA from '../../components/ContactCTA.astro';
 import Hero from '../../components/Hero.astro';
 import Icon from '../../components/Icon.astro';
 import Pill from '../../components/Pill.astro';
-
+import Pill2 from '../../components/Pill2.astro';
 interface Props {
 	entry: CollectionEntry<'work'>;
 }
@@ -37,15 +37,17 @@ const { Content } = await entry.render();
 						<div class="details">
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
-							</div>
-							<p class="description">{entry.data.description}</p>
 						</div>
+					
 					</Hero>
+					<div class="tags">{entry.data.technos.map((t) => <Pill2>{t}</Pill2>)}</div>
+							<p class="description">{entry.data.description}</p></div>
 				</div>
 			</header>
 			<main class="wrapper">
 				<div class="stack gap-10 content">
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
+				{ entry.data.video && <video controls src={entry.data.video}  ></video>}
+				
 					<div class="content">
 						<Content />
 					</div>
@@ -77,12 +79,20 @@ const { Content } = await entry.render();
 
 	.tags {
 		display: flex;
+		wrap:wrap;
 		gap: 0.5rem;
 	}
-
+  	@media (max-width: 50em) {
+		.tags {
+            
+			display: flex;
+			justify-content: center;	
+            flex-wrap:wrap;
+		}
+	}
 	.description {
 		font-size: var(--text-lg);
-		max-width: 54ch;
+		
 	}
 
 	.content {

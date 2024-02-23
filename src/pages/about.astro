@@ -3,65 +3,119 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
+import Pill from '../components/Pill.astro';
+import Pill2 from '../components/Pill2.astro';
 ---
 
-<BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
+<BaseLayout title="About | Rokayia Almhdie" >
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+				title=""
+				tagline=""
 			>
 				<img
 					width="1553"
 					height="873"
-					src="/assets/at-work.jpg"
-					alt="Jeanine White at work with a colleague"
+					src="/assets/pictureRokayia.jpg"
+					alt="Rokayia Almhdie"
 				/>
 			</Hero>
 
+
 			<section>
-				<h2 class="section-title">Background</h2>
-				<div class="content">
-					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
-						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum
-						id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla
-						pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
-					</p>
-					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
-						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
-						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
-						quam elementum pulvinar etiam non.
-					</p>
-					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
-						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
-						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
-					</p>
-				</div>
+				<h2 class="section-title">Formation</h2>
+
+			<div class="timeline">
+  <div class="container left">
+    <div class="date">2023 - 2024</div>
+    <div class="content">
+      <h2>Formation Développement Web et Web Mobile - AFPA</h2>
+      <p>
+      Développement Front-End (Figma, Bootstrap, HTML, CSS, Javascript) & développement Back-End (Php, Symphony, MySQL), Devops ( git, Docker)
+      </p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="date">2017 - 2020</div>
+    <div class="content">
+      <h2>Technologies de l'Information pour la santé - Polytech Grenoble</h2>
+      <p>
+       Informatique, génie logiciel, modelisation des systèmes informatiques, traitement de signal et de données, réseau, physiologie, biologie...
+      </p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="date">2015 - 2017</div>
+    <div class="content">
+      <h2>Prépa intégrée MPI - Polytech Orléans</h2>
+      <p>
+        Informatique, mathématiques, mécanique, électronique, optique... 
+      </p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="date">2015</div>
+    <div class="content">
+      <h2>Baccalaureat série Scientifique, mention européenne anglais - Lycée Voltaire</h2>
+      <p>
+      
+      </p>
+    </div>
+  </div>
+
+</div>
 			</section>
 			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<p>Corporis voluptates tenetur laudantium.</p>
+				<h2 class="section-title">Compétences</h2>
+				<div class="containerC">
+					<div class="contentComp">
+					<Pill>Java</Pill>
+					<Pill>C++</Pill>
+					<Pill>C#</Pill>
+					<Pill>HTML5</Pill>
+					<Pill>CSS3</Pill>
+					<Pill>
+					<div class="contPill">
+						<div>Javascript</div>
+						<div style="font-size:0.8rem;">Vanilla,Vue.js5</div>
+					</div>
+					</Pill>
+					<Pill>Bootstap5</Pill>
+					<Pill>SQL</Pill>
+					<Pill>
+					<div class="contPill">
+						<div>PHP</div>
+						<div style="font-size:0.8rem;">Symphony5</div>
+					</div>
+					</Pill>
+					   <Pill>Matlab</Pill>
+					<Pill>R</Pill>
+					</div>
+					
+				   <div class="contentComp">
+					<Pill2>A l'écoute</Pill2>
+					<Pill2>Passionnée</Pill2>
+					<Pill2>Réactive</Pill2>
+					<Pill2>Pédagogue</Pill2>
+					<Pill2>Rigourouse</Pill2>
+					<Pill2>Curieuse</Pill2>
+					<Pill2>Motivée</Pill2>
+					<Pill2>Esprit d'équipe</Pill2>
+					</div>
 				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<p>officia unde omnis</p>
-				</div>
+			 
 			</section>
 		</main>
 
 		<ContactCTA />
 	</div>
+
+
 </BaseLayout>
 
 <style>
+
 	.about {
 		display: flex;
 		flex-direction: column;
@@ -117,4 +171,194 @@ import Hero from '../components/Hero.astro';
 			font-size: var(--text-lg);
 		}
 	}
+
+
+
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: var(--gray-100);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.container {
+  padding: 15px 30px;
+  position: relative;
+  background: inherit;
+  width: 50%;
+}
+
+.container.left {
+  left: 0;
+}
+
+.container.right {
+  left: 50%;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: calc(50% - 8px);
+  right: -8px;
+  background: #ffffff;
+  border: 2px solid var(--gray-100);
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.container.right::after {
+  left: -8px;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  top: calc(50% - 1px);
+  right: 8px;
+  background: var(--gray-100);
+  z-index: 1;
+}
+
+.container.right::before {
+  left: 8px;
+}
+
+.container .date {
+  position: absolute;
+  display: inline-block;
+  top: calc(50% - 8px);
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--gray-100);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+
+.container.left .date {
+  right: -180px;
+}
+
+.container.right .date {
+  left: -170px;
+}
+
+.container .icon {
+  position: absolute;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  padding: 9px 0;
+  top: calc(50% - 20px);
+  background: #F6D155;
+  border: 2px solid var(--gray-100);
+  border-radius: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: var(--gray-100);
+  z-index: 1;
+}
+
+.container.left .icon {
+  right: 56px;
+}
+
+.container.right .icon {
+  left: 56px;
+}
+
+.container .content {
+  padding: 30px 30px 30px 30px;
+  background: var(--accent-clair);
+  position: relative;
+  border-radius: 0 50px 50px 0;
+}
+
+.container.right .content {
+  padding: 30px 30px 30px 30px;
+  border-radius: 50px 0 0 50px;
+}
+
+.container .content h2 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: normal;
+  color: var(--gray-100);
+}
+
+.container .content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+@media (max-width: 767.98px) {
+  .timeline::after {
+    left: 90px;
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 120px;
+    padding-right: 30px;
+  }
+
+  .container.right {
+    left: 0%;
+  }
+
+  .container.left::after, 
+  .container.right::after {
+    left: 82px;
+  }
+
+  .container.left::before,
+  .container.right::before {
+    left: 1000px;
+    border-color: transparent var(--gray-100) transparent transparent;
+  }
+
+  .container.left .date,
+  .container.right .date {
+    right: auto;
+    left: -15px;
+  }
+
+  .container.left .icon,
+  .container.right .icon {
+    right: auto;
+    left: 146px;
+  }
+
+  .container.left .content,
+  .container.right .content {
+    padding: 30px 30px 30px 30px;
+    border-radius: 50px 0 0 50px;
+  }
+}
+.contentComp{
+	   display: flex;
+		  flex-wrap:wrap;
+		gap: 0.5rem;
+		margin-top: 20px;
+}
 </style>
